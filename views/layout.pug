@@ -5,5 +5,11 @@ html
     link(rel='stylesheet', href='/stylesheets/style.css')
     script(src='/javascripts/reddium.js')
   body
-    h1= 'Reddium'
-    block content
+    .masthead
+      .masthead-inner.maxWidth1000.paddingRight20.paddingLeft20.marginAuto
+        h2.logo.masthead-block.height65.floatLeft= 'Reddium'
+    .masthead.masthead--spacer.height65
+    .container
+      .content.maxWidth1000.marginAuto.foreground
+        .relative
+          block content

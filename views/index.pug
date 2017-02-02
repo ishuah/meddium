@@ -14,13 +14,23 @@ block content
                     a.link(href='/r/'+post['data']['subreddit']) r/#{post['data']['subreddit']}
               .div
                 a(href=post['data']['permalink'])
-                  section
+                  section.clearfix.marginBottom10
                     h3.post-title= post['data']['title']
-                  section
-                    -
-                    if post['data']['preview']
-                      if post['data']['preview']['images'][0]['resolutions'].length >= 4
+                  -
+                  if post['data']['preview']
+                    if post['data']['preview']['images'][0]['resolutions'].length >= 4
+                      section.clearfix.marginBottom10
                         img.post-image(src=post['data']['preview']['images'][0]['resolutions'][3]['url'], width=618)
-                      else if post['data']['preview']['images'][0]['resolutions'].length >= 3
+                    else if post['data']['preview']['images'][0]['resolutions'].length >= 3
+                      section.clearfix.marginBottom10
                         img.post-image(src=post['data']['preview']['images'][0]['resolutions'][2]['url'], width=320)
+                  -
+                  if post['data']['selftext']
+                    section.clearfix.marginBottom10
+                      p= post['data']['selftext']
+                  section.clearfix
+                    .post-meta.floatLeft
+                      p= post['data']['ups']
+                    .post-meta.floatRight
+                      p= post['data']['num_comments']+' comments'
   .sidebar

@@ -1,11 +1,15 @@
 extends layout
 
 block content
-  div(id="post")
-    a(href=post['url'])
-      h2= post['title']
-    p= post['selftext_html']
-  div(id="comments")
+  .post-view
+    -
+    if post['is_self']
+      h1.post-view-title= post['title']
+      p.marginTop10!= post['selftext_html']
+    else
+      a(href=post['url'])
+        h1.post-view-title= post['title']
+  .comments
     -
     each comment in comments
-      p= comment['data']['body']
+      p!= comment['data']['body_html']

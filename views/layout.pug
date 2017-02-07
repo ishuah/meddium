@@ -2,15 +2,14 @@ doctype html
 html
   head
     title= 'Reddium'
+    link(rel='stylesheet', href='/stylesheets/wing.min.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
     script(src='/javascripts/reddium.js')
   body
-    .masthead
-      .masthead-inner.maxWidth1000.paddingRight20.paddingLeft20.marginAuto
-        a(href='/')
-          h2.logo.masthead-block.height65.floatLeft= 'Reddium'
-    .masthead.masthead--spacer.height65
-    .container
-      .content.maxWidth1000.marginAuto.foreground
-        .relative
-          block content
+    .background
+      .masthead
+        .masthead-inner.maxWidth1000.paddingRight20.paddingLeft20.marginAuto
+          a(href='/')
+            h2.logo.masthead-block.height65.floatLeft= 'Reddium'
+      .masthead.masthead--spacer.height65
+      block content
